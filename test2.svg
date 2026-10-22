@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200" role="img" aria-labelledby="test2-title test2-desc">
+<title id="test2-title">九霄奇行：鹈鹕的答案是21</title>
+<desc id="test2-desc">一幅精细的奇幻矢量插画。孙悟空驾驶一架大型客机；鹈鹕骑自行车行驶在飞机的巨大机翼上，展开双翼托住一只北极熊；秦始皇骑在北极熊背上，用电动螺丝刀拧紧鞍座上的螺丝。鹈鹕喊出“21！”：按手感选取9颗圆形糖和12颗五角星形糖，可以保证圆形苹果配星形桃子，或圆形桃子配星形苹果。</desc>
+<defs>
+ <linearGradient id="sky" x1="0" y1="0" x2=".5" y2="1"><stop stop-color="#badde5"/><stop offset=".58" stop-color="#e7eeeb"/><stop offset="1" stop-color="#f3e1c2"/></linearGradient>
+ <radialGradient id="sun-halo"><stop stop-color="#fff9d9" stop-opacity=".9"/><stop offset="1" stop-color="#fff9d9" stop-opacity="0"/></radialGradient>
+ <linearGradient id="cloud-fill" x2="0" y2="1"><stop stop-color="#fffdf5"/><stop offset="1" stop-color="#d0e2e4"/></linearGradient>
+ <linearGradient id="feather" x1="0" y1="0" x2=".4" y2="1"><stop stop-color="#fffef5"/><stop offset=".52" stop-color="#eef0de"/><stop offset="1" stop-color="#9dbcc1"/></linearGradient>
+ <linearGradient id="feather-dark" x2=".4" y2="1"><stop stop-color="#71959e"/><stop offset="1" stop-color="#304f5c"/></linearGradient>
+ <linearGradient id="pelican-body" x1="0" y1="0" x2="1" y2=".7"><stop stop-color="#fffef3"/><stop offset=".65" stop-color="#e8ead9"/><stop offset="1" stop-color="#8cadb5"/></linearGradient>
+ <linearGradient id="beak" x2=".3" y2="1"><stop stop-color="#f8cc67"/><stop offset=".5" stop-color="#e9a044"/><stop offset="1" stop-color="#bd6136"/></linearGradient>
+ <linearGradient id="pouch" x2=".3" y2="1"><stop stop-color="#fae1a6"/><stop offset="1" stop-color="#dd9752"/></linearGradient>
+ <linearGradient id="bike-metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#79b8b1"/><stop offset=".5" stop-color="#287f86"/><stop offset="1" stop-color="#1f515d"/></linearGradient>
+ <linearGradient id="copper" x2=".8" y2="1"><stop stop-color="#f5dc98"/><stop offset=".5" stop-color="#cb9955"/><stop offset="1" stop-color="#906039"/></linearGradient>
+ <pattern id="print-grain" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="5" cy="9" r=".7" fill="#527a84" opacity=".1"/><circle cx="23" cy="24" r=".6" fill="#fffdf2" opacity=".45"/></pattern>
+ <pattern id="sky-lines" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M 80 0 H 0 V 80" fill="none" stroke="#75a5b2" stroke-opacity=".12" stroke-width=".7"/></pattern>
+ <filter id="soft-shadow" x="-.2" y="-.2" width="1.4" height="1.5"><feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#315763" flood-opacity=".14"/></filter>
+ <clipPath id="picture-clip"><rect x="28" y="28" width="1544" height="1144" rx="32"/></clipPath>
+ <g id="candy-star"><polygon points="0.00,-12.00 3.23,-4.45 11.41,-3.71 5.23,1.70 7.05,9.71 0.00,5.50 -7.05,9.71 -5.23,1.70 -11.41,-3.71 -3.23,-4.45" fill="#e8ac59" stroke="#9d6c37" stroke-width="1.4"/><path d="M -2 -7 L 0 -2 L 5 -1" fill="none" stroke="#ffe5a6" stroke-width="1.5" stroke-linecap="round"/></g>
+ <g id="candy-round"><circle r="10" fill="#c27f61" stroke="#855649" stroke-width="1.4"/><path d="M -6 -3 A 7 7 0 0 1 3 -6" fill="none" stroke="#f4c49b" stroke-width="2" stroke-linecap="round"/></g>
+</defs>
+<style>
+ svg { max-width:100%; height:auto; background:#dfebe6; }
+ text { font-family:"Noto Serif CJK SC","Songti SC","SimSun",serif; }
+ .sans { font-family:"Noto Sans CJK SC",sans-serif; }
+ .ink { stroke:#294e5a;stroke-linecap:round;stroke-linejoin:round; }
+</style>
+<g clip-path="url(#picture-clip)">
+ <rect x="28" y="28" width="1544" height="1144" fill="url(#sky)"/>
+ <rect x="28" y="28" width="1544" height="1144" fill="url(#sky-lines)"/>
+ <circle cx="1250" cy="245" r="300" fill="url(#sun-halo)"/>
+ <circle cx="1320" cy="220" r="91" fill="#fff7d6" opacity=".78"/>
+ <circle cx="1320" cy="220" r="110" fill="none" stroke="#f9f6db" stroke-width="1.5"/>
+ <path d="M 700 95 C 927 42 1140 76 1300 162" fill="none" stroke="#f9fbef" stroke-width="2" stroke-dasharray="3 9" opacity=".8"/>
+ <g fill="none" stroke="#80a4ad" stroke-width="1.4" opacity=".32">
+  <circle cx="1420" cy="126" r="37"/><path d="M 1420 82 V 170 M 1376 126 H 1464"/><circle cx="1420" cy="126" r="5"/>
+  <path d="M 149 1000 H 287 M 182 975 H 320 M 76 688 H 180 M 110 666 H 212 M 1386 566 H 1500 M 1414 546 H 1523"/>
+ </g>
+ <g fill="url(#cloud-fill)" opacity=".76">
+  <path d="M -50 582 Q 15 521 81 548 Q 99 482 161 499 Q 188 442 235 473 Q 292 454 323 509 Q 381 491 416 551 Q 458 563 476 608 H -50 Z"/>
+  <path d="M 1290 668 Q 1296 622 1346 629 Q 1381 579 1431 607 Q 1475 554 1519 601 Q 1580 588 1637 640 V 716 H 1290 Z"/>
+  <path d="M -20 1049 Q 34 1009 87 1033 Q 137 966 208 1009 Q 270 971 318 1023 Q 359 1010 391 1058 Q 475 1032 525 1101 H -20 Z"/>
+  <path d="M 1080 1098 Q 1134 1033 1196 1073 Q 1248 1006 1312 1052 Q 1369 1023 1412 1069 Q 1452 1006 1507 1036 Q 1569 1010 1612 1060 V 1210 H 1080 Z"/>
+ </g>
+ <g fill="none" stroke="#8dadb2" stroke-width="1.4" opacity=".25">
+  <path d="M 50 564 Q 129 533 194 550 M 1353 662 Q 1430 628 1512 653 M 69 1064 Q 175 1037 251 1061 M 1194 1114 Q 1305 1078 1380 1114"/>
+ </g>
+ <rect x="28" y="28" width="1544" height="1144" fill="url(#print-grain)"/>
+ <text class="sans" x="91" y="83" fill="#53747a" font-size="14" letter-spacing="6">云 端 奇 遇  ·  第 〇 二 幕</text>
+ <text x="86" y="158" fill="#244d58" font-size="73" font-weight="700" letter-spacing="9">九霄奇行</text>
+ <text class="sans" x="93" y="195" fill="#64838a" font-size="17" letter-spacing="3">鹈鹕的高空答题时刻</text>
+ <g transform="translate(543 105) rotate(-7)" fill="none" stroke="#a96248">
+  <rect width="62" height="62" rx="5" stroke-width="2"/><rect x="5" y="5" width="52" height="52" rx="2"/>
+  <text x="31" y="27" text-anchor="middle" fill="#a96248" stroke="none" font-size="19">天马</text><text x="31" y="51" text-anchor="middle" fill="#a96248" stroke="none" font-size="19">行空</text>
+ </g>
+ <!-- The number in the speech balloon uses the distinguishable-shapes rule. -->
+ <path d="M 141 246 Q 103 246 103 284 V 387 Q 103 426 143 426 H 511 L 666 552 L 579 404 Q 602 391 602 361 V 284 Q 602 246 563 246 Z" fill="#fffbee" stroke="#315864" stroke-width="3.5" filter="url(#soft-shadow)"/>
+ <path d="M 126 284 Q 127 265 147 265 H 561" fill="none" stroke="#fff" stroke-width="3" opacity=".8"/>
+ <text class="sans" x="351" y="384" text-anchor="middle" fill="#bd6b42" font-size="139" font-weight="900" letter-spacing="-6">21！</text>
+ <path d="M 633 311 l 29 -14 M 641 338 h 35 M 630 365 l 26 16" fill="none" stroke="#bd6b42" stroke-width="4" stroke-linecap="round"/>
+ <!-- Small visual explanation makes the shape-selection assumption explicit. -->
+ <g transform="translate(108 468)">
+  <rect width="462" height="259" rx="17" fill="#f8f8e9" fill-opacity=".83" stroke="#93abb0" stroke-width="1.3"/>
+  <path d="M 20 48 H 442" stroke="#b6c7c2"/>
+  <text class="sans" x="24" y="31" font-size="13" fill="#58767b" letter-spacing="3">凭手感选取形状</text>
+  <use href="#candy-round" transform="translate(42 81)"/>
+  <text class="sans" x="65" y="89" fill="#315560" font-size="24" font-weight="700">9 颗圆形</text>
+  <text class="sans" x="218" y="89" fill="#879b97" font-size="24">+</text>
+  <use href="#candy-star" transform="translate(270 81)"/>
+  <text class="sans" x="292" y="89" fill="#315560" font-size="24" font-weight="700">12 颗星形</text>
+  <path d="M 20 109 H 442" stroke="#b6c7c2"/>
+  <g class="sans" fill="#547179" font-size="14" text-anchor="middle">
+   <text x="193" y="137">苹果味</text><text x="286" y="137">桃子味</text><text x="379" y="137">西瓜味</text>
+   <text x="78" y="175">圆形</text><text x="193" y="175">7</text><text x="286" y="175">9</text><text x="379" y="175">8</text>
+   <text x="78" y="212">五角星形</text><text x="193" y="212">7</text><text x="286" y="212">6</text><text x="379" y="212">4</text>
+  </g>
+  <path d="M 26 148 H 436 M 26 190 H 436 M 139 121 V 225" fill="none" stroke="#c6d3ca"/>
+  <text class="sans" x="231" y="244" text-anchor="middle" fill="#7a8b7e" font-size="11" letter-spacing="1">异形苹果与桃子，一定能凑成一对。</text>
+ </g>
+
+<defs>
+  <linearGradient id="plane-body" x1="0" y1="0" x2="0.15" y2="1">
+    <stop stop-color="#fff7df"/><stop offset=".3" stop-color="#e2ece6"/><stop offset=".68" stop-color="#b6cbcb"/><stop offset="1" stop-color="#6d939b"/>
+  </linearGradient>
+  <linearGradient id="plane-wing" x1="0" y1="0" x2=".3" y2="1">
+    <stop stop-color="#f7f2d9"/><stop offset=".35" stop-color="#cadad6"/><stop offset="1" stop-color="#7b9fa5"/>
+  </linearGradient>
+  <linearGradient id="plane-tail" x1="0" y1="0" x2="1" y2="1">
+    <stop stop-color="#587f85"/><stop offset="1" stop-color="#294e56"/>
+  </linearGradient>
+  <linearGradient id="plane-engine" x1="0" y1="0" x2="0" y2="1">
+    <stop stop-color="#f5eed7"/><stop offset=".35" stop-color="#c0d3d0"/><stop offset=".7" stop-color="#789b9f"/><stop offset="1" stop-color="#365c65"/>
+  </linearGradient>
+  <radialGradient id="plane-fan">
+    <stop stop-color="#a3bab4"/><stop offset=".3" stop-color="#42646a"/><stop offset="1" stop-color="#102f3a"/>
+  </radialGradient>
+  <linearGradient id="plane-glass" x1="0" y1="0" x2="1" y2="1">
+    <stop stop-color="#173c48"/><stop offset="1" stop-color="#547d7d"/>
+  </linearGradient>
+  <g id="plane-port">
+    <rect x="-9" y="-12" width="18" height="25" rx="8" fill="#38626d" stroke="#fff3d4" stroke-width="2"/>
+    <path d="M -5 -7 V 6" stroke="#a3c8c3" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <g id="plane-rivet"><circle r="1.55" fill="#456c71"/><circle cx="-.4" cy="-.5" r=".5" fill="#fdf6dd"/></g>
+  <g id="plane-fan-blade">
+    <path d="M 0 -8 C 17 -15 22 -27 13 -35 C 6 -31 5 -20 0 -8 Z" fill="#829f9e" stroke="#213e48" stroke-width="1"/>
+    <path d="M 4 -13 Q 17 -25 13 -32" fill="none" stroke="#b4c8bc" stroke-width="1"/>
+  </g>
+</defs>
+<g id="plane-aircraft" stroke-linejoin="round">
+  <!-- Far wing and tall blue tail. -->
+  <path d="M 881 885 L 588 731 L 644 720 L 978 858 Z" fill="url(#plane-wing)" stroke="#294f57" stroke-width="3"/>
+  <path d="M 603 732 L 888 869 M 656 751 L 659 766 M 713 779 L 716 796" fill="none" stroke="#91aaa7" stroke-width="2"/>
+  <path d="M 1323 878 L 1442 722 Q 1453 707 1477 714 L 1468 894 Z" fill="url(#plane-tail)" stroke="#254b55" stroke-width="4"/>
+  <path d="M 1362 858 L 1452 741 L 1451 863 Z" fill="none" stroke="#d7b778" stroke-width="4"/>
+  <path d="M 1403 830 L 1456 817 M 1418 811 L 1458 801" stroke="#b8c7b6" stroke-width="2"/>
+  <path d="M 1298 897 L 1491 845 L 1531 860 L 1386 928 Z" fill="url(#plane-wing)" stroke="#294f57" stroke-width="3"/>
+  <path d="M 1421 884 L 1496 860" stroke="#d4b374" stroke-width="4"/>
+
+  <!-- A roomy, four-window flight deck and long passenger fuselage. -->
+  <path d="M 103 924 Q 123 889 199 863 L 256 811 Q 285 786 345 791 Q 391 793 435 825 L 1251 845 Q 1350 851 1464 884 Q 1479 889 1472 900 Q 1397 948 1241 970 L 431 1001 Q 255 1006 150 965 Q 103 950 103 924 Z"
+        fill="url(#plane-body)" stroke="#244d56" stroke-width="4"/>
+  <path d="M 125 921 Q 200 889 279 896 L 1278 894 Q 1362 894 1456 893" fill="none" stroke="#fdf9e9" stroke-width="9"/>
+  <path d="M 135 938 Q 222 911 326 928 L 1275 925 Q 1369 919 1442 903" fill="none" stroke="#486e75" stroke-width="13"/>
+  <path d="M 135 936 Q 222 909 326 926 L 1275 923 Q 1369 917 1442 901" fill="none" stroke="#d6ad69" stroke-width="3"/>
+  <path d="M 161 966 Q 316 994 440 985 L 1215 958" fill="none" stroke="#678f97" stroke-width="2"/>
+  <path d="M 114 929 L 134 929 M 142 920 L 158 916" stroke="#426c72" stroke-width="2"/>
+  <path d="M 190 862 Q 199 877 198 894 M 230 885 Q 233 944 217 978 M 499 828 Q 484 911 505 994 M 1250 847 L 1230 969" fill="none" stroke="#91abae" stroke-width="1.5"/>
+
+  <!-- Passenger windows, emergency door, panel seams and rivet rows. -->
+  <g>
+    <use href="#plane-port" transform="translate(529 870)"/>
+    <use href="#plane-port" transform="translate(568 870.45)"/>
+    <use href="#plane-port" transform="translate(607 870.9)"/>
+    <use href="#plane-port" transform="translate(646 871.35)"/>
+    <use href="#plane-port" transform="translate(685 871.8)"/>
+    <use href="#plane-port" transform="translate(724 872.25)"/>
+    <use href="#plane-port" transform="translate(763 872.7)"/>
+    <use href="#plane-port" transform="translate(802 873.15)"/>
+    <use href="#plane-port" transform="translate(841 873.6)"/>
+    <use href="#plane-port" transform="translate(880 874.05)"/>
+    <use href="#plane-port" transform="translate(919 874.5)"/>
+    <use href="#plane-port" transform="translate(958 874.95)"/>
+    <use href="#plane-port" transform="translate(997 875.4)"/>
+    <use href="#plane-port" transform="translate(1036 875.85)"/>
+    <use href="#plane-port" transform="translate(1075 876.3)"/>
+    <use href="#plane-port" transform="translate(1114 876.75)"/>
+    <use href="#plane-port" transform="translate(1153 877.2)"/>
+    <use href="#plane-port" transform="translate(574 954) scale(.67)"/>
+    <use href="#plane-port" transform="translate(616 953.7) scale(.67)"/>
+    <use href="#plane-port" transform="translate(658 953.4) scale(.67)"/>
+    <use href="#plane-port" transform="translate(700 953.1) scale(.67)"/>
+    <use href="#plane-port" transform="translate(742 952.8) scale(.67)"/>
+    <use href="#plane-port" transform="translate(784 952.5) scale(.67)"/>
+    <use href="#plane-port" transform="translate(826 952.2) scale(.67)"/>
+    <use href="#plane-port" transform="translate(868 951.9) scale(.67)"/>
+    <use href="#plane-port" transform="translate(910 951.6) scale(.67)"/>
+    <use href="#plane-port" transform="translate(952 951.3) scale(.67)"/>
+  </g>
+  <path d="M 462 850 Q 458 840 449 840 H 433 Q 424 842 423 851 L 423 914 Q 424 921 433 921 H 451 Q 461 919 462 911 Z" fill="#c8d9d4" stroke="#72959b" stroke-width="2"/>
+  <rect x="433" y="852" width="17" height="23" rx="7" fill="#3d6974" stroke="#f4efd8" stroke-width="2"/>
+  <path d="M 446 892 H 454 M 429 908 H 454" stroke="#718f90" stroke-width="2"/>
+  <path d="M 1206 858 L 1197 915 L 1225 914 L 1232 861 Z" fill="none" stroke="#89a6a7" stroke-width="2"/>
+  <g>
+    <use href="#plane-rivet" transform="translate(482 838)"/>
+    <use href="#plane-rivet" transform="translate(508 838.5)"/>
+    <use href="#plane-rivet" transform="translate(534 839)"/>
+    <use href="#plane-rivet" transform="translate(560 839.5)"/>
+    <use href="#plane-rivet" transform="translate(586 840)"/>
+    <use href="#plane-rivet" transform="translate(612 840.5)"/>
+    <use href="#plane-rivet" transform="translate(638 841)"/>
+    <use href="#plane-rivet" transform="translate(664 841.5)"/>
+    <use href="#plane-rivet" transform="translate(690 842)"/>
+    <use href="#plane-rivet" transform="translate(716 842.5)"/>
+    <use href="#plane-rivet" transform="translate(742 843)"/>
+    <use href="#plane-rivet" transform="translate(768 843.5)"/>
+    <use href="#plane-rivet" transform="translate(794 844)"/>
+    <use href="#plane-rivet" transform="translate(820 844.5)"/>
+    <use href="#plane-rivet" transform="translate(846 845)"/>
+    <use href="#plane-rivet" transform="translate(872 845.5)"/>
+    <use href="#plane-rivet" transform="translate(898 846)"/>
+    <use href="#plane-rivet" transform="translate(924 846.5)"/>
+    <use href="#plane-rivet" transform="translate(950 847)"/>
+    <use href="#plane-rivet" transform="translate(976 847.5)"/>
+    <use href="#plane-rivet" transform="translate(1002 848)"/>
+    <use href="#plane-rivet" transform="translate(1028 848.5)"/>
+    <use href="#plane-rivet" transform="translate(1054 849)"/>
+    <use href="#plane-rivet" transform="translate(1080 849.5)"/>
+    <use href="#plane-rivet" transform="translate(1106 850)"/>
+    <use href="#plane-rivet" transform="translate(1132 850.5)"/>
+    <use href="#plane-rivet" transform="translate(1158 851)"/>
+    <use href="#plane-rivet" transform="translate(1184 851.5)"/>
+    <use href="#plane-rivet" transform="translate(1210 852)"/>
+    <use href="#plane-rivet" transform="translate(465 980)"/>
+    <use href="#plane-rivet" transform="translate(492 979.5)"/>
+    <use href="#plane-rivet" transform="translate(519 979)"/>
+    <use href="#plane-rivet" transform="translate(546 978.5)"/>
+    <use href="#plane-rivet" transform="translate(573 978)"/>
+    <use href="#plane-rivet" transform="translate(600 977.5)"/>
+    <use href="#plane-rivet" transform="translate(627 977)"/>
+    <use href="#plane-rivet" transform="translate(654 976.5)"/>
+    <use href="#plane-rivet" transform="translate(681 976)"/>
+    <use href="#plane-rivet" transform="translate(708 975.5)"/>
+    <use href="#plane-rivet" transform="translate(735 975)"/>
+    <use href="#plane-rivet" transform="translate(762 974.5)"/>
+    <use href="#plane-rivet" transform="translate(789 974)"/>
+    <use href="#plane-rivet" transform="translate(816 973.5)"/>
+    <use href="#plane-rivet" transform="translate(843 973)"/>
+    <use href="#plane-rivet" transform="translate(870 972.5)"/>
+    <use href="#plane-rivet" transform="translate(897 972)"/>
+    <use href="#plane-rivet" transform="translate(924 971.5)"/>
+    <use href="#plane-rivet" transform="translate(951 971)"/>
+    <use href="#plane-rivet" transform="translate(978 970.5)"/>
+    <use href="#plane-rivet" transform="translate(1005 970)"/>
+    <use href="#plane-rivet" transform="translate(1032 969.5)"/>
+    <use href="#plane-rivet" transform="translate(1059 969)"/>
+    <use href="#plane-rivet" transform="translate(1086 968.5)"/>
+    <use href="#plane-rivet" transform="translate(1113 968)"/>
+  </g>
+
+  <!-- Sun Wukong: golden circlet, monkey face and red silk flying scarf. -->
+  <path d="M 238 871 L 267 807 Q 284 793 317 794 Q 365 793 402 819 L 454 872 Q 462 883 448 891 L 253 893 Q 235 891 238 871 Z" fill="url(#plane-glass)" stroke="#264b54" stroke-width="4"/>
+  <path d="M 378 825 Q 405 820 416 839 L 424 885 H 377 Z" fill="#22424b" stroke="#6d9998" stroke-width="2"/>
+  <path d="M 300 850 Q 334 839 362 861 L 388 891 H 283 Z" fill="#d4a447" stroke="#394a41" stroke-width="2.5"/>
+  <path d="M 316 857 L 335 877 L 356 853" fill="none" stroke="#f2d994" stroke-width="5"/>
+  <path d="M 319 857 Q 343 849 359 862 L 356 871 Q 334 866 317 872 Z" fill="#b84b37" stroke="#6f3a35" stroke-width="1.5"/>
+  <path d="M 356 862 Q 383 853 398 864 L 419 860 L 408 872 Q 382 877 355 870 Z" fill="#ce6041" stroke="#743c35" stroke-width="1.5"/>
+  <!-- Monkey hair silhouette and round ear. -->
+  <path d="M 296 849 Q 281 838 286 819 L 279 818 L 288 808 L 284 798 L 296 799 L 301 785 L 310 794 L 321 782 L 326 794 L 342 790 L 341 801 Q 358 807 359 826 Q 357 849 341 856 Z" fill="#a5682f" stroke="#463d32" stroke-width="2.5"/>
+  <circle cx="350" cy="827" r="13" fill="#c38540" stroke="#594332" stroke-width="2"/>
+  <path d="M 349 820 Q 358 822 351 834" fill="none" stroke="#85542f" stroke-width="2"/>
+  <path d="M 299 809 Q 310 802 319 811 Q 331 802 341 812 L 342 835 Q 338 855 318 858 Q 300 855 294 840 L 284 837 Q 279 831 286 827 L 297 822 Z" fill="#efc488" stroke="#724e32" stroke-width="2"/>
+  <path d="M 299 818 Q 306 813 313 818 M 324 817 Q 331 812 337 818" fill="none" stroke="#453d2d" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 300 823 L 309 823 M 326 822 L 335 822" stroke="#273e38" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 291 830 Q 300 829 302 835 L 295 838 M 305 844 Q 316 852 328 843" fill="none" stroke="#8e5634" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M 287 807 Q 317 793 349 807" fill="none" stroke="#f1ce6d" stroke-width="6"/>
+  <path d="M 288 806 Q 317 797 347 806" fill="none" stroke="#97722d" stroke-width="1.5"/>
+  <path d="M 313 805 C 301 792 296 807 306 808 C 313 809 316 798 320 802 C 329 792 339 805 330 808 C 325 810 320 806 320 802" fill="none" stroke="#ffe5a0" stroke-width="2"/>
+
+  <!-- Forearms and cockpit control yoke. -->
+  <path d="M 303 866 Q 287 863 274 877 L 261 880 M 344 873 L 321 883 L 297 878" fill="none" stroke="#e7b85f" stroke-width="11" stroke-linecap="round"/>
+  <path d="M 273 878 L 260 881 M 298 879 L 285 880" stroke="#efc58c" stroke-width="9" stroke-linecap="round"/>
+  <path d="M 274 894 L 276 877 M 257 872 V 880 Q 275 889 294 880 V 871" fill="none" stroke="#183842" stroke-width="5" stroke-linecap="round"/>
+  <path d="M 246 889 H 449" stroke="#26464d" stroke-width="8"/>
+  <g fill="#eac988">
+    <circle cx="260" cy="889" r="2"/><circle cx="271" cy="889" r="2"/><circle cx="408" cy="889" r="2"/>
+  </g>
+  <!-- Window frames and soft glass streaks. -->
+  <path d="M 367 806 L 380 890 M 415 835 L 429 890" stroke="#c9dad1" stroke-width="5"/>
+  <path d="M 251 865 L 269 820 M 384 819 L 410 847 M 393 816 L 430 852" stroke="#d5eee5" stroke-width="3" opacity=".35"/>
+  <path d="M 238 871 L 267 807 Q 284 793 317 794 Q 365 793 402 819 L 454 872 Q 462 883 448 891 L 253 893 Q 235 891 238 871 Z" fill="none" stroke="#d8c391" stroke-width="3"/>
+  <path d="M 254 897 H 448" stroke="#5d838a" stroke-width="2"/>
+
+  <!-- Wide foreground wing: level top edge is the bicycle's riding surface. -->
+  <path d="M 680 950 L 850 805 H 1365 L 1465 840 L 1120 1000 L 835 1005 Z" fill="url(#plane-wing)" stroke="#2d535b" stroke-width="4"/>
+  <path d="M 680 950 L 835 1005 L 1120 1000 L 1465 840 L 1456 851 L 1122 1013 L 835 1018 L 687 964 Z" fill="#6a8b91" stroke="#315860" stroke-width="2"/>
+  <path d="M 852 808 H 1364 L 1456 840" fill="none" stroke="#fff7df" stroke-width="6"/>
+  <path d="M 755 945 L 901 833 L 1334 832 L 1405 850 L 1091 977 L 843 982 Z" fill="none" stroke="#91aaa9" stroke-width="2"/>
+  <path d="M 823 896 H 1307 M 915 838 L 878 981 M 1064 832 L 1043 979 M 1198 831 L 1158 948" fill="none" stroke="#9ab0ad" stroke-width="1.5"/>
+  <path d="M 846 806 L 826 838 M 1362 807 L 1330 836" stroke="#bd995e" stroke-width="5"/>
+  <path d="M 891 842 H 1109" fill="none" stroke="#c6b083" stroke-width="2" stroke-dasharray="10 7"/>
+  <g fill="#d9e1d2" stroke="#6b9296" stroke-width="1.5">
+    <path d="M 873 969 L 902 904 H 969 L 954 974 Z"/>
+    <path d="M 973 975 L 984 904 H 1044 L 1040 973 Z"/>
+    <path d="M 1060 971 L 1061 904 H 1121 L 1114 949 Z"/>
+  </g>
+  <g>
+    <use href="#plane-rivet" transform="translate(862 817)"/>
+    <use href="#plane-rivet" transform="translate(885 817)"/>
+    <use href="#plane-rivet" transform="translate(908 817)"/>
+    <use href="#plane-rivet" transform="translate(931 817)"/>
+    <use href="#plane-rivet" transform="translate(954 817)"/>
+    <use href="#plane-rivet" transform="translate(977 817)"/>
+    <use href="#plane-rivet" transform="translate(1000 817)"/>
+    <use href="#plane-rivet" transform="translate(1023 817)"/>
+    <use href="#plane-rivet" transform="translate(1046 817)"/>
+    <use href="#plane-rivet" transform="translate(1069 817)"/>
+    <use href="#plane-rivet" transform="translate(1092 817)"/>
+    <use href="#plane-rivet" transform="translate(1115 817)"/>
+    <use href="#plane-rivet" transform="translate(1138 817)"/>
+    <use href="#plane-rivet" transform="translate(1161 817)"/>
+    <use href="#plane-rivet" transform="translate(1184 817)"/>
+    <use href="#plane-rivet" transform="translate(1207 817)"/>
+    <use href="#plane-rivet" transform="translate(1230 817)"/>
+    <use href="#plane-rivet" transform="translate(1253 817)"/>
+    <use href="#plane-rivet" transform="translate(1276 817)"/>
+    <use href="#plane-rivet" transform="translate(1299 817)"/>
+    <use href="#plane-rivet" transform="translate(1322 817)"/>
+    <use href="#plane-rivet" transform="translate(848 994)"/>
+    <use href="#plane-rivet" transform="translate(869 993.8)"/>
+    <use href="#plane-rivet" transform="translate(890 993.6)"/>
+    <use href="#plane-rivet" transform="translate(911 993.4)"/>
+    <use href="#plane-rivet" transform="translate(932 993.2)"/>
+    <use href="#plane-rivet" transform="translate(953 993)"/>
+    <use href="#plane-rivet" transform="translate(974 992.8)"/>
+    <use href="#plane-rivet" transform="translate(995 992.6)"/>
+    <use href="#plane-rivet" transform="translate(1016 992.4)"/>
+    <use href="#plane-rivet" transform="translate(1037 992.2)"/>
+    <use href="#plane-rivet" transform="translate(1058 992)"/>
+    <use href="#plane-rivet" transform="translate(1079 991.8)"/>
+  </g>
+
+  <!-- Two distinct turbofan engines, with radial blades and bright inlet lips. -->
+  <g transform="translate(778 1015)">
+    <path d="M 6 -30 L 35 -70 L 74 -74 L 78 -24" fill="#8ba6a7" stroke="#2e545d" stroke-width="3"/>
+    <path d="M 0 -42 Q 62 -52 131 -24 L 142 16 Q 67 57 0 44 Z" fill="url(#plane-engine)" stroke="#284e58" stroke-width="3"/>
+    <path d="M 18 -34 Q 75 -43 124 -20 M 32 40 Q 86 38 131 15" fill="none" stroke="#f4eed6" stroke-width="3"/>
+    <ellipse rx="35" ry="49" fill="#b7c9be" stroke="#244b55" stroke-width="3"/>
+    <ellipse rx="28" ry="41" fill="url(#plane-fan)" stroke="#e4d4a5" stroke-width="3"/>
+    <g transform="scale(.7 1)">
+      <use href="#plane-fan-blade" transform="rotate(0)"/>
+      <use href="#plane-fan-blade" transform="rotate(30)"/>
+      <use href="#plane-fan-blade" transform="rotate(60)"/>
+      <use href="#plane-fan-blade" transform="rotate(90)"/>
+      <use href="#plane-fan-blade" transform="rotate(120)"/>
+      <use href="#plane-fan-blade" transform="rotate(150)"/>
+      <use href="#plane-fan-blade" transform="rotate(180)"/>
+      <use href="#plane-fan-blade" transform="rotate(210)"/>
+      <use href="#plane-fan-blade" transform="rotate(240)"/>
+      <use href="#plane-fan-blade" transform="rotate(270)"/>
+      <use href="#plane-fan-blade" transform="rotate(300)"/>
+      <use href="#plane-fan-blade" transform="rotate(330)"/>
+    </g>
+    <ellipse rx="8" ry="11" fill="#b8c4b2" stroke="#2f515b" stroke-width="2"/>
+    <path d="M -16 -40 Q -37 -11 -22 30" fill="none" stroke="#fff7d7" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 96 -34 L 104 32" stroke="#6c9095" stroke-width="2"/>
+  </g>
+  <g transform="translate(1110 1009) scale(1.1 .98)">
+    <path d="M 18 -30 L 41 -82 L 86 -85 L 93 -21" fill="#8ba6a7" stroke="#2e545d" stroke-width="3"/>
+    <path d="M 0 -44 Q 77 -57 149 -25 L 160 16 Q 81 62 0 47 Z" fill="url(#plane-engine)" stroke="#284e58" stroke-width="3"/>
+    <path d="M 20 -36 Q 93 -46 144 -20 M 28 43 Q 94 45 149 17" fill="none" stroke="#f4eed6" stroke-width="3"/>
+    <ellipse rx="38" ry="52" fill="#b7c9be" stroke="#244b55" stroke-width="3"/>
+    <ellipse rx="30" ry="43" fill="url(#plane-fan)" stroke="#e4d4a5" stroke-width="3"/>
+    <g transform="scale(.76 1.04)">
+      <use href="#plane-fan-blade" transform="rotate(0)"/>
+      <use href="#plane-fan-blade" transform="rotate(25.714285714285715)"/>
+      <use href="#plane-fan-blade" transform="rotate(51.42857142857143)"/>
+      <use href="#plane-fan-blade" transform="rotate(77.14285714285714)"/>
+      <use href="#plane-fan-blade" transform="rotate(102.85714285714286)"/>
+      <use href="#plane-fan-blade" transform="rotate(128.57142857142858)"/>
+      <use href="#plane-fan-blade" transform="rotate(154.28571428571428)"/>
+      <use href="#plane-fan-blade" transform="rotate(180)"/>
+      <use href="#plane-fan-blade" transform="rotate(205.71428571428572)"/>
+      <use href="#plane-fan-blade" transform="rotate(231.42857142857142)"/>
+      <use href="#plane-fan-blade" transform="rotate(257.14285714285717)"/>
+      <use href="#plane-fan-blade" transform="rotate(282.85714285714283)"/>
+      <use href="#plane-fan-blade" transform="rotate(308.57142857142856)"/>
+      <use href="#plane-fan-blade" transform="rotate(334.2857142857143)"/>
+    </g>
+    <ellipse rx="9" ry="12" fill="#b8c4b2" stroke="#2f515b" stroke-width="2"/>
+    <path d="M -17 -43 Q -39 -11 -24 32" fill="none" stroke="#fff7d7" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 112 -34 L 123 33" stroke="#6c9095" stroke-width="2"/>
+  </g>
+  <path d="M 236 984 L 229 1013 Q 227 1024 216 1025" fill="none" stroke="#49747b" stroke-width="3"/>
+  <circle cx="215" cy="1025" r="5" fill="#9fbaa9" stroke="#355962" stroke-width="2"/>
+</g>
+
+
+<!-- A touring bicycle sits with both tyres on the aircraft's upper wing edge. -->
+<g class="ink" stroke-width="2">
+ <ellipse cx="1040" cy="812" rx="192" ry="13" fill="#254754" opacity=".18" stroke="none"/>
+<g transform="translate(910 748)">
+<circle r="57" fill="#c7dbd9" fill-opacity=".18" stroke="#233f4c" stroke-width="9"/><circle r="51" fill="none" stroke="#d9c994" stroke-width="2.5"/>
+<path d="M 0 0 L 49.00 0.00" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L 46.60 15.14" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L 39.64 28.80" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L 28.80 39.64" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L 15.14 46.60" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L 0.00 49.00" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L -15.14 46.60" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L -28.80 39.64" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L -39.64 28.80" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L -46.60 15.14" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L -49.00 0.00" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L -46.60 -15.14" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L -39.64 -28.80" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L -28.80 -39.64" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L -15.14 -46.60" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L -0.00 -49.00" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L 15.14 -46.60" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L 28.80 -39.64" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L 39.64 -28.80" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L 46.60 -15.14" stroke="#b3c9c4" stroke-width="1.1"/>
+<circle r="9" fill="url(#copper)" stroke="#345664" stroke-width="2"/><circle r="3" fill="#294e5a" stroke="none"/><path d="M -34 -40 A 53 53 0 0 1 28 -45" fill="none" stroke="#fff7d4" stroke-width="2"/></g>
+<g transform="translate(1170 748)">
+<circle r="57" fill="#c7dbd9" fill-opacity=".18" stroke="#233f4c" stroke-width="9"/><circle r="51" fill="none" stroke="#d9c994" stroke-width="2.5"/>
+<path d="M 0 0 L 49.00 0.00" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L 46.60 15.14" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L 39.64 28.80" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L 28.80 39.64" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L 15.14 46.60" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L 0.00 49.00" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L -15.14 46.60" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L -28.80 39.64" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L -39.64 28.80" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L -46.60 15.14" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L -49.00 0.00" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L -46.60 -15.14" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L -39.64 -28.80" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L -28.80 -39.64" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L -15.14 -46.60" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L -0.00 -49.00" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L 15.14 -46.60" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L 28.80 -39.64" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L 39.64 -28.80" stroke="#b3c9c4" stroke-width="1.1"/>
+<path d="M 0 0 L 46.60 -15.14" stroke="#b3c9c4" stroke-width="1.1"/>
+<circle r="9" fill="url(#copper)" stroke="#345664" stroke-width="2"/><circle r="3" fill="#294e5a" stroke="none"/><path d="M -34 -40 A 53 53 0 0 1 28 -45" fill="none" stroke="#fff7d4" stroke-width="2"/></g>
+
+ <path d="M 910 748 L 975 652 L 1040 748 Z M 975 652 L 1120 648 L 1040 748 M 1120 648 L 1170 748" fill="none" stroke="#244b58" stroke-width="13"/>
+ <path d="M 910 748 L 975 652 L 1040 748 Z M 975 652 L 1120 648 L 1040 748 M 1120 648 L 1170 748" fill="none" stroke="url(#bike-metal)" stroke-width="8"/>
+ <path d="M 985 653 L 1103 649 M 978 671 L 1029 735 M 1130 672 L 1161 733" fill="none" stroke="#a8d9cb" stroke-width="1.6"/>
+ <path d="M 966 637 L 975 652 M 1120 648 L 1109 620 Q 1104 608 1117 606 L 1140 607" fill="none" stroke="#d4c28e" stroke-width="7"/>
+ <path d="M 1125 607 H 1140" stroke="#825c42" stroke-width="9"/>
+ <path d="M 951 635 Q 974 630 992 636" fill="none" stroke="#674d3d" stroke-width="12"/>
+ <path d="M 953 632 Q 974 627 991 633" fill="none" stroke="#c59b60" stroke-width="2"/>
+ <path d="M 863 716 Q 903 673 950 713 M 1130 710 Q 1173 679 1211 718" fill="none" stroke="#d2a260" stroke-width="5"/>
+ <path d="M 866 709 L 909 744 M 1208 714 L 1172 746" fill="none" stroke="#768d8d" stroke-width="1.5"/>
+ <path d="M 878 681 H 940 M 889 683 L 911 731" fill="none" stroke="#3b5962" stroke-width="4"/>
+ <path d="M 1035 730 L 912 741 Q 904 747 912 755 L 1039 767 Q 1059 750 1035 730 Z" fill="none" stroke="#9b9f84" stroke-width="2"/>
+ <circle cx="1040" cy="748" r="20" fill="url(#copper)" stroke-width="3"/>
+ <circle cx="1040" cy="748" r="13" fill="#517277" stroke="#e2c78b" stroke-width="2" stroke-dasharray="2 3"/>
+ <path d="M 1018 763 L 1061 731" stroke="#ded4ae" stroke-width="5"/>
+ <path d="M 1007 765 H 1029 M 1050 733 H 1074" stroke="#244450" stroke-width="5"/>
+ <circle cx="1040" cy="748" r="5" fill="#f2dfa5"/>
+ <path d="M 1118 623 Q 1157 633 1165 705" fill="none" stroke="#385c67" stroke-width="1.4"/>
+ <circle cx="1118" cy="608" r="6" fill="#d7bb72"/>
+ <path d="M 905 765 L 891 788" stroke="#4c6d75" stroke-width="2"/>
+</g>
+
+
+<!-- A pelican's outstretched wings form the living platform under the polar bear. -->
+<g class="ink" stroke-width="2.2">
+ <path d="M 1025 544 C 972 500 911 467 849 468 C 786 469 732 437 700 430 C 711 458 753 488 808 509 C 762 505 729 490 697 484 C 714 517 762 544 835 550 C 907 560 956 579 1018 591 Z" fill="url(#feather-dark)"/>
+ <path d="M 1051 547 C 1110 511 1172 484 1231 480 C 1303 474 1350 451 1397 432 C 1384 467 1349 492 1300 511 C 1350 504 1384 491 1411 476 C 1398 514 1351 543 1297 555 C 1215 578 1141 587 1070 587 Z" fill="url(#feather-dark)"/>
+<path d="M 1002 551 Q 849.5 460 697 438 Q 700 458 727 467 Q 849.5 563 1010 564 Z" fill="url(#feather)"/>
+<path d="M 990 554 Q 849.5 467 709 450" fill="none" stroke="#91aeb2" stroke-width="1"/>
+<path d="M 989 547 Q 848.0 472 707 450 Q 710 470 737 479 Q 848.0 559 997 560 Z" fill="url(#feather)"/>
+<path d="M 977 550 Q 848.0 479 719 462" fill="none" stroke="#91aeb2" stroke-width="1"/>
+<path d="M 976 543 Q 846.5 484 717 462 Q 720 482 747 491 Q 846.5 555 984 556 Z" fill="url(#feather)"/>
+<path d="M 964 546 Q 846.5 491 729 474" fill="none" stroke="#91aeb2" stroke-width="1"/>
+<path d="M 963 539 Q 845.0 496 727 474 Q 730 494 757 503 Q 845.0 551 971 552 Z" fill="url(#feather)"/>
+<path d="M 951 542 Q 845.0 503 739 486" fill="none" stroke="#91aeb2" stroke-width="1"/>
+<path d="M 950 535 Q 843.5 508 737 486 Q 740 506 767 515 Q 843.5 547 958 548 Z" fill="url(#feather)"/>
+<path d="M 938 538 Q 843.5 515 749 498" fill="none" stroke="#91aeb2" stroke-width="1"/>
+<path d="M 937 531 Q 842.0 520 747 498 Q 750 518 777 527 Q 842.0 543 945 544 Z" fill="url(#feather)"/>
+<path d="M 925 534 Q 842.0 527 759 510" fill="none" stroke="#91aeb2" stroke-width="1"/>
+<path d="M 924 527 Q 840.5 532 757 510 Q 760 530 787 539 Q 840.5 539 932 540 Z" fill="url(#feather)"/>
+<path d="M 912 530 Q 840.5 539 769 522" fill="none" stroke="#91aeb2" stroke-width="1"/>
+<path d="M 911 523 Q 839.0 544 767 522 Q 770 542 797 551 Q 839.0 535 919 536 Z" fill="url(#feather)"/>
+<path d="M 899 526 Q 839.0 551 779 534" fill="none" stroke="#91aeb2" stroke-width="1"/>
+<path d="M 898 519 Q 837.5 556 777 534 Q 780 554 807 563 Q 837.5 531 906 532 Z" fill="url(#feather)"/>
+<path d="M 886 522 Q 837.5 563 789 546" fill="none" stroke="#91aeb2" stroke-width="1"/>
+<path d="M 1080 549 Q 1244.0 464 1408 434 Q 1406 458 1383 469 Q 1244.0 562 1073 563 Z" fill="url(#feather)"/>
+<path d="M 1088 553 Q 1244.0 466 1397 448" fill="none" stroke="#91aeb2" stroke-width="1"/>
+<path d="M 1093 546 Q 1248.0 475 1403 445 Q 1401 469 1378 480 Q 1248.0 559 1086 560 Z" fill="url(#feather)"/>
+<path d="M 1101 550 Q 1248.0 477 1392 459" fill="none" stroke="#91aeb2" stroke-width="1"/>
+<path d="M 1106 543 Q 1252.0 486 1398 456 Q 1396 480 1373 491 Q 1252.0 556 1099 557 Z" fill="url(#feather)"/>
+<path d="M 1114 547 Q 1252.0 488 1387 470" fill="none" stroke="#91aeb2" stroke-width="1"/>
+<path d="M 1119 540 Q 1256.0 497 1393 467 Q 1391 491 1368 502 Q 1256.0 553 1112 554 Z" fill="url(#feather)"/>
+<path d="M 1127 544 Q 1256.0 499 1382 481" fill="none" stroke="#91aeb2" stroke-width="1"/>
+<path d="M 1132 537 Q 1260.0 508 1388 478 Q 1386 502 1363 513 Q 1260.0 550 1125 551 Z" fill="url(#feather)"/>
+<path d="M 1140 541 Q 1260.0 510 1377 492" fill="none" stroke="#91aeb2" stroke-width="1"/>
+<path d="M 1145 534 Q 1264.0 519 1383 489 Q 1381 513 1358 524 Q 1264.0 547 1138 548 Z" fill="url(#feather)"/>
+<path d="M 1153 538 Q 1264.0 521 1372 503" fill="none" stroke="#91aeb2" stroke-width="1"/>
+<path d="M 1158 531 Q 1268.0 530 1378 500 Q 1376 524 1353 535 Q 1268.0 544 1151 545 Z" fill="url(#feather)"/>
+<path d="M 1166 535 Q 1268.0 532 1367 514" fill="none" stroke="#91aeb2" stroke-width="1"/>
+<path d="M 1171 528 Q 1272.0 541 1373 511 Q 1371 535 1348 546 Q 1272.0 541 1164 542 Z" fill="url(#feather)"/>
+<path d="M 1179 532 Q 1272.0 543 1362 525" fill="none" stroke="#91aeb2" stroke-width="1"/>
+<path d="M 1184 525 Q 1276.0 552 1368 522 Q 1366 546 1343 557 Q 1276.0 538 1177 539 Z" fill="url(#feather)"/>
+<path d="M 1192 529 Q 1276.0 554 1357 536" fill="none" stroke="#91aeb2" stroke-width="1"/>
+
+ <path d="M 1011 529 Q 922 477 850 476 Q 901 501 959 551 L 1017 574 Z" fill="#f7f6e7"/>
+ <path d="M 1065 533 Q 1141 489 1244 478 Q 1204 501 1130 552 L 1069 574 Z" fill="#f7f6e7"/>
+ <path d="M 1014 538 Q 944 505 888 494 M 1069 543 Q 1149 509 1211 492" fill="none" stroke="#d1dcd0" stroke-width="8"/>
+<path d="M 905 500 q 3 -9 12 -3 q 8 7 12 13" fill="none" stroke="#aebfb9" stroke-width="1.2"/>
+<path d="M 917 505 q 3 -9 12 -3 q 8 7 12 13" fill="none" stroke="#aebfb9" stroke-width="1.2"/>
+<path d="M 929 510 q 3 -9 12 -3 q 8 7 12 13" fill="none" stroke="#aebfb9" stroke-width="1.2"/>
+<path d="M 941 515 q 3 -9 12 -3 q 8 7 12 13" fill="none" stroke="#aebfb9" stroke-width="1.2"/>
+<path d="M 953 520 q 3 -9 12 -3 q 8 7 12 13" fill="none" stroke="#aebfb9" stroke-width="1.2"/>
+<path d="M 965 525 q 3 -9 12 -3 q 8 7 12 13" fill="none" stroke="#aebfb9" stroke-width="1.2"/>
+<path d="M 977 530 q 3 -9 12 -3 q 8 7 12 13" fill="none" stroke="#aebfb9" stroke-width="1.2"/>
+<path d="M 989 535 q 3 -9 12 -3 q 8 7 12 13" fill="none" stroke="#aebfb9" stroke-width="1.2"/>
+<path d="M 1100 535 q 5 -11 13 -9 q 7 1 12 -4" fill="none" stroke="#aebfb9" stroke-width="1.2"/>
+<path d="M 1112 530 q 5 -11 13 -9 q 7 1 12 -4" fill="none" stroke="#aebfb9" stroke-width="1.2"/>
+<path d="M 1124 525 q 5 -11 13 -9 q 7 1 12 -4" fill="none" stroke="#aebfb9" stroke-width="1.2"/>
+<path d="M 1136 520 q 5 -11 13 -9 q 7 1 12 -4" fill="none" stroke="#aebfb9" stroke-width="1.2"/>
+<path d="M 1148 515 q 5 -11 13 -9 q 7 1 12 -4" fill="none" stroke="#aebfb9" stroke-width="1.2"/>
+<path d="M 1160 510 q 5 -11 13 -9 q 7 1 12 -4" fill="none" stroke="#aebfb9" stroke-width="1.2"/>
+<path d="M 1172 505 q 5 -11 13 -9 q 7 1 12 -4" fill="none" stroke="#aebfb9" stroke-width="1.2"/>
+<path d="M 1184 500 q 5 -11 13 -9 q 7 1 12 -4" fill="none" stroke="#aebfb9" stroke-width="1.2"/>
+
+ <!-- The bird balances with its wings, while its webbed feet keep pedaling. -->
+ <path d="M 998 634 Q 993 671 987 700 L 1018 759" fill="none" stroke="#926236" stroke-width="13"/>
+ <path d="M 998 634 Q 993 671 987 700 L 1018 759" fill="none" stroke="#d5a35e" stroke-width="8"/>
+ <path d="M 1009 752 L 1002 764 L 1029 769 L 1040 764 L 1020 756 Z" fill="#e4b360"/>
+ <path d="M 1017 760 L 1028 766 M 1013 760 L 1011 765" fill="none" stroke="#9e743c" stroke-width="1"/>
+ <path d="M 1087 606 Q 1138 620 1169 646 Q 1125 648 1091 632 L 1108 654 Q 1063 649 1047 631 Z" fill="url(#feather)"/>
+ <path d="M 1082 613 Q 1121 627 1147 639 M 1074 622 L 1096 643" fill="none" stroke="#9ab4b7" stroke-width="1.5"/>
+ <path d="M 979 535 C 1001 525 1040 527 1065 548 C 1106 567 1117 606 1091 635 C 1067 668 1011 670 982 645 C 960 626 951 591 961 562 Z" fill="url(#pelican-body)" stroke-width="2.8"/>
+ <path d="M 972 589 Q 973 635 1013 646 Q 1053 657 1084 630 Q 1038 646 1007 621 Z" fill="#acc7c5" opacity=".7" stroke="none"/>
+ <path d="M 1001 553 Q 1060 537 1084 583 Q 1088 607 1069 625 Q 1044 639 1023 621 Q 998 598 1001 553 Z" fill="#e5e9d8" stroke="#89a8ac" stroke-width="1.4"/>
+ <path d="M 1014 561 Q 1060 561 1072 589 M 1016 575 Q 1057 580 1069 604 M 1020 592 Q 1047 601 1059 618" fill="none" stroke="#a8bfbb" stroke-width="1.3"/>
+ <path d="M 1049 644 L 1075 680 L 1061 728" fill="none" stroke="#976a3d" stroke-width="14"/>
+ <path d="M 1049 644 L 1075 680 L 1061 728" fill="none" stroke="#e5b569" stroke-width="9"/>
+ <ellipse cx="1074" cy="680" rx="7" ry="6" fill="#c28e4e" stroke-width="1.5"/>
+ <path d="M 1056 722 L 1048 734 L 1070 741 L 1086 738 L 1074 732 L 1067 722 Z" fill="#efbd6d"/>
+ <path d="M 1061 729 L 1072 738 M 1066 729 L 1080 736 M 1058 728 L 1055 734" fill="none" stroke="#ad7c40" stroke-width="1"/>
+ <!-- Long neck, throat pouch and long bill identify the pelican unmistakably. -->
+ <g transform="translate(-60 35)">
+ <path d="M 1031 605 C 1018 578 984 551 970 536 C 961 527 940 537 923 534 C 900 530 888 511 893 491 C 900 462 927 452 950 465 C 971 477 974 499 986 515 C 1048 540 1068 552 1063 585 Q 1058 611 1031 605 Z" fill="url(#pelican-body)" stroke-width="2.8"/>
+ <path d="M 936 465 Q 947 450 963 456 L 953 466 Q 970 462 977 470 L 965 476" fill="#f5f1df" stroke-width="1.5"/>
+ <path d="M 953 491 Q 959 521 972 539 Q 1033 562 1038 586" fill="none" stroke="#d9e0d1" stroke-width="12"/>
+ <path d="M 907 515 Q 823 532 746 536 Q 800 565 838 578 Q 887 594 919 548 L 930 529 Z" fill="url(#pouch)" stroke-width="2.2"/>
+ <path d="M 911 528 Q 887 554 844 570 M 896 529 Q 865 547 819 559 M 874 533 Q 839 545 794 549" fill="none" stroke="#c79052" stroke-width="1.1" opacity=".8"/>
+ <path d="M 910 506 Q 837 514 728 529 Q 734 539 751 540 L 915 529 Z" fill="#584a39" stroke-width="1.6"/>
+ <path d="M 914 502 C 863 501 804 512 732 520 Q 714 522 726 529 Q 764 538 838 525 L 912 517 Z" fill="url(#beak)" stroke-width="2.4"/>
+ <path d="M 740 522 Q 821 512 896 508" fill="none" stroke="#ffe3a1" stroke-width="2"/>
+ <path d="M 728 529 Q 720 535 729 538 L 742 534" fill="#d28c44" stroke-width="1.4"/>
+ <path d="M 907 517 Q 922 518 927 528" fill="none" stroke="#9e713d" stroke-width="1.4"/>
+ <ellipse cx="921" cy="490" rx="11" ry="13" fill="#dcb256" stroke="#5a6856" stroke-width="1.5"/>
+ <ellipse cx="922" cy="489" rx="6" ry="8" fill="#243d48" stroke="none"/>
+ <circle cx="924" cy="486" r="2.6" fill="#fffdf0" stroke="none"/>
+ <path d="M 907 475 Q 919 467 930 477" fill="none" stroke="#637f82" stroke-width="2"/>
+ <path d="M 940 498 l 6 4 M 939 508 l 7 3 M 951 518 l 6 4 M 1005 555 l 4 7 M 1012 566 l 3 6" fill="none" stroke="#a4bbb8" stroke-width="1.2"/>
+ </g>
+</g>
+
+<defs>
+  <linearGradient id="bear-fur" x1="0" y1="0" x2=".25" y2="1">
+    <stop stop-color="#fffef5"/><stop offset=".48" stop-color="#f3f7ee"/><stop offset="1" stop-color="#b6d0d1"/>
+  </linearGradient>
+  <linearGradient id="bear-face" x1="0" y1="0" x2=".6" y2="1">
+    <stop stop-color="#fffef4"/><stop offset=".7" stop-color="#e4eeea"/><stop offset="1" stop-color="#accbce"/>
+  </linearGradient>
+  <linearGradient id="bear-shadow" x1="0" y1="0" x2="0" y2="1">
+    <stop stop-color="#a9c5c8"/><stop offset="1" stop-color="#7fabad"/>
+  </linearGradient>
+  <linearGradient id="bear-gold" x1="0" y1="0" x2=".7" y2="1">
+    <stop stop-color="#ffe7a5"/><stop offset=".45" stop-color="#cca364"/><stop offset="1" stop-color="#936c3b"/>
+  </linearGradient>
+  <linearGradient id="bear-robe" x1="0" y1="0" x2="1" y2="1">
+    <stop stop-color="#314a45"/><stop offset=".5" stop-color="#172f31"/><stop offset="1" stop-color="#0e252a"/>
+  </linearGradient>
+  <linearGradient id="bear-drill" x1="0" y1="0" x2="0" y2="1">
+    <stop stop-color="#df9160"/><stop offset=".4" stop-color="#ac5037"/><stop offset="1" stop-color="#743f32"/>
+  </linearGradient>
+</defs>
+<g id="bear-emperor" stroke="#28494b" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Far legs are shaded, with separate rounded paws. -->
+  <path d="M 962 419 Q 971 441 968 464 L 963 480 Q 976 487 972 495 H 934 Q 923 491 934 480 L 937 435 Z"
+        fill="url(#bear-shadow)" stroke-width="2.5"/>
+  <path d="M 1137 418 Q 1152 438 1148 463 L 1148 477 Q 1167 480 1165 490 H 1125 Q 1116 486 1123 476 L 1119 435 Z"
+        fill="url(#bear-shadow)" stroke-width="2.5"/>
+  <path d="M 941 487 v 5 M 952 487 v 6 M 1131 483 v 6 M 1142 483 v 6" fill="none" stroke="#537d7d" stroke-width="1.5"/>
+
+  <!-- The broad polar-bear body is supported by the pelican's wings below. -->
+  <path d="M 894 400 Q 889 381 903 366 L 913 360 L 911 351 L 924 353 Q 947 339 976 341
+           L 988 337 L 994 342 Q 1021 339 1050 344 Q 1082 341 1106 348 L 1121 344 L 1127 349
+           Q 1150 344 1171 352 Q 1207 365 1212 398 Q 1219 430 1190 448
+           Q 1168 461 1136 461 L 1125 467 L 1114 462 Q 1086 469 1063 462 L 1050 466 L 1040 461
+           Q 1018 466 994 456 L 982 460 L 975 453 Q 949 458 923 443 Q 898 432 894 412 Z"
+        fill="url(#bear-fur)" stroke-width="3"/>
+  <path d="M 906 395 Q 930 366 974 364 Q 1017 357 1044 364 Q 1092 352 1142 366"
+        fill="none" stroke="#fffef7" stroke-width="10" opacity=".9"/>
+  <path d="M 902 416 Q 938 438 972 431 Q 1041 447 1118 437 Q 1165 437 1197 416
+           Q 1195 446 1158 452 Q 1099 470 1040 454 Q 959 461 923 437 Z"
+        fill="#a9c8c9" stroke="none" opacity=".42"/>
+  <g fill="none" stroke="#b6cccc" stroke-width="1.3" opacity=".9">
+    <path d="M 918 380 l 8 -5 m -10 13 l 10 -5 M 937 363 l 9 -4 M 955 355 l 9 -2 M 971 352 l 10 1"/>
+    <path d="M 908 405 l 8 7 m -4 -1 l 6 8 M 934 423 l 10 6 M 958 435 l 9 3 M 984 441 l 9 3"/>
+    <path d="M 1000 439 l 9 4 M 1017 447 l 9 1 M 1065 448 l 10 1 M 1087 452 l 10 -1"/>
+    <path d="M 1121 445 l 10 -4 M 1150 436 l 10 -7 M 1183 402 l 3 10 M 1169 380 l 9 6"/>
+  </g>
+  <path d="M 898 388 Q 882 380 879 393 Q 879 405 897 409" fill="#e4efea" stroke-width="2"/>
+
+  <!-- Near hind and front legs, with tufts and individually drawn claws. -->
+  <path d="M 927 416 Q 953 426 953 449 L 942 478 Q 943 484 953 489 Q 957 497 946 501
+           H 898 Q 888 497 895 487 L 908 479 Q 913 460 906 441"
+        fill="url(#bear-fur)" stroke-width="2.8"/>
+  <path d="M 923 445 Q 933 458 926 481 L 915 490" fill="none" stroke="#b2cccd" stroke-width="7"/>
+  <path d="M 909 490 l -2 10 M 922 491 l -1 10 M 935 492 v 8" fill="none" stroke="#799d9d" stroke-width="1.5"/>
+  <path d="M 905 499 l 3 -5 l 3 5 M 919 500 l 3 -5 l 3 5 M 933 500 l 3 -4 l 3 4" fill="#596f6d" stroke="none"/>
+  <path d="M 1163 413 Q 1188 423 1193 443 L 1191 474 Q 1199 482 1213 486 Q 1222 494 1214 500
+           H 1166 Q 1154 496 1158 482 L 1162 455 L 1151 429"
+        fill="url(#bear-fur)" stroke-width="2.8"/>
+  <path d="M 1173 441 Q 1180 456 1174 479 Q 1174 487 1184 491" fill="none" stroke="#afcbcc" stroke-width="7"/>
+  <path d="M 1180 491 v 9 M 1192 491 v 9 M 1204 492 v 8" fill="none" stroke="#799d9d" stroke-width="1.5"/>
+  <path d="M 1177 500 l 3 -5 l 3 5 M 1189 500 l 3 -5 l 3 5 M 1201 500 l 3 -4 l 3 4" fill="#596f6d" stroke="none"/>
+
+  <!-- Golden chest harness wraps around the shoulder. -->
+  <path d="M 1130 351 Q 1144 373 1149 400 Q 1153 425 1145 453 L 1160 448 Q 1170 422 1163 394 Q 1159 368 1145 352 Z"
+        fill="url(#bear-gold)" stroke-width="1.8"/>
+  <path d="M 1139 354 Q 1156 395 1155 435" fill="none" stroke="#fff1c1" stroke-width="2"/>
+  <rect x="1145" y="405" width="21" height="17" rx="3" fill="#374e43" stroke="#e6c382" stroke-width="3" transform="rotate(-6 1155 414)"/>
+  <path d="M 1154 407 v 13" stroke="#e6c382" stroke-width="2"/>
+
+  <!-- Ears, head and the long muzzle distinguish this as a polar bear. -->
+  <path d="M 1173 359 Q 1171 342 1182 335 Q 1194 331 1200 344" fill="#bed4d2" stroke-width="2.5"/>
+  <path d="M 1182 348 Q 1182 338 1189 340 L 1194 347" fill="#789c9b" stroke="none"/>
+  <path d="M 1169 367 Q 1187 336 1218 339 Q 1237 337 1249 351 Q 1258 362 1266 367
+           Q 1290 365 1300 377 Q 1310 389 1300 402 Q 1287 416 1258 413
+           Q 1243 428 1224 432 L 1212 440 L 1206 433 Q 1183 430 1176 414 L 1163 410 L 1169 398"
+        fill="url(#bear-face)" stroke-width="3"/>
+  <path d="M 1209 347 Q 1202 331 1212 323 Q 1223 318 1232 329 Q 1237 341 1228 349"
+        fill="url(#bear-fur)" stroke-width="2.5"/>
+  <path d="M 1216 341 Q 1209 331 1217 328 Q 1226 325 1228 336 Z" fill="#8eafad" stroke="none"/>
+  <path d="M 1202 357 Q 1227 348 1246 365" fill="none" stroke="#fffef7" stroke-width="8"/>
+  <path d="M 1200 400 Q 1211 417 1233 419 Q 1254 415 1268 406 L 1256 419 Q 1220 441 1203 423 Z"
+        fill="#b6d0cf" stroke="none"/>
+  <path d="M 1225 369 Q 1233 363 1240 369" fill="none" stroke="#708d88" stroke-width="2"/>
+  <ellipse cx="1235" cy="373" rx="4.8" ry="5.8" fill="#234244" stroke="none"/>
+  <circle cx="1236.5" cy="371.5" r="1.7" fill="#fffef4" stroke="none"/>
+  <path d="M 1266 375 Q 1277 371 1287 375" fill="none" stroke="#b4c9c3" stroke-width="2"/>
+  <path d="M 1289 376 Q 1306 375 1307 385 Q 1304 396 1292 395 L 1286 388 Z"
+        fill="#263f41" stroke-width="1.5"/>
+  <path d="M 1293 379 Q 1299 378 1302 382" fill="none" stroke="#718786" stroke-width="2"/>
+  <path d="M 1292 396 Q 1275 405 1258 398" fill="none" stroke="#4c716f" stroke-width="2"/>
+  <path d="M 1252 388 l 1 1 M 1261 387 l 1 1 M 1265 394 l 1 1" stroke="#77958f" stroke-width="2"/>
+  <g fill="none" stroke="#b2cbca" stroke-width="1.2">
+    <path d="M 1178 373 l 7 -8 M 1185 386 l 6 -7 M 1183 398 l 5 8 M 1197 412 l 7 4"/>
+    <path d="M 1212 424 l 6 1 M 1238 409 l 7 -2"/>
+  </g>
+
+  <!-- Saddle and its carved gilt rail. -->
+  <path d="M 973 344 Q 1032 330 1105 347 L 1113 368 Q 1052 352 978 364 Z"
+        fill="#995637" stroke="#d6af6b" stroke-width="3"/>
+  <path d="M 985 351 Q 1040 339 1099 353" fill="none" stroke="#f1d395" stroke-width="2"/>
+  <path d="M 986 359 L 989 371 M 1000 355 L 1004 369 M 1016 352 L 1019 366 M 1033 351 L 1035 366 M 1051 352 L 1052 367 M 1069 355 L 1069 369 M 1087 359 L 1086 372"
+        fill="none" stroke="#614535" stroke-width="2"/>
+  <path d="M 983 363 Q 1002 401 988 430 L 1003 434 Q 1018 400 998 359"
+        fill="url(#bear-gold)" stroke-width="1.8"/>
+
+  <!-- The emperor's hanging boot and layered riding robe. -->
+  <path d="M 1007 328 Q 1032 324 1047 350 L 1046 378 L 1071 405 L 1055 418
+           L 1025 386 Q 1020 375 1024 355 L 995 349 Z"
+        fill="url(#bear-robe)" stroke="#ccaa67" stroke-width="3"/>
+  <path d="M 1040 375 L 1063 406" fill="none" stroke="#65715b" stroke-width="4"/>
+  <path d="M 1057 403 L 1071 404 L 1077 419 Q 1094 421 1098 430 L 1054 431 L 1048 418 Z"
+        fill="#162c2c" stroke="#d0ad6d" stroke-width="2.5"/>
+  <path d="M 1054 433 H 1098" fill="none" stroke="#223a38" stroke-width="4"/>
+  <path d="M 1004 247 Q 1021 242 1040 255 L 1064 285 L 1047 313 L 1050 341
+           Q 1028 356 1000 346 L 980 355 L 971 344 Q 982 327 981 299 L 990 268 Z"
+        fill="url(#bear-robe)" stroke="#d2ae6a" stroke-width="3"/>
+  <path d="M 1001 253 L 1016 277 L 1000 317 L 987 343" fill="none" stroke="#e6c788" stroke-width="6"/>
+  <path d="M 1013 253 L 1022 274 L 1008 314" fill="none" stroke="#a95b3e" stroke-width="4"/>
+  <path d="M 987 319 Q 1015 328 1048 318 L 1048 331 Q 1020 341 985 332 Z"
+        fill="url(#bear-gold)" stroke-width="1.3"/>
+  <circle cx="1017" cy="328" r="6" fill="#e8cf91" stroke="#846b3d" stroke-width="1.5"/>
+  <path d="M 989 337 L 984 348 M 997 338 L 994 348 M 1039 337 L 1042 343" stroke="#8a865f" stroke-width="1.4"/>
+  <!-- Tiny embroidered dragon, rendered as linework rather than text. -->
+  <g transform="translate(1027 292)" fill="none" stroke="#d0ad68" stroke-width="1.6">
+    <path d="M 2 -11 Q -12 -17 -13 -3 Q -12 10 -2 10 Q 10 10 8 0 Q 6 -6 0 -3 Q -4 1 2 4
+             M 1 -12 L 10 -16 L 8 -9 L 15 -6 L 8 -2 M -12 -1 L -19 -7 M -8 8 L -13 15 M 0 10 L 4 17"/>
+    <circle cx="8" cy="-10" r="1.2" fill="#e8ce88"/>
+  </g>
+
+  <!-- Back sleeve and hand stabilize the top of the power screwdriver. -->
+  <path d="M 1032 255 Q 1050 255 1060 267 L 1094 279 L 1087 294 L 1049 284 L 1025 274"
+        fill="#203b39" stroke="#d2ae6a" stroke-width="2.5"/>
+  <path d="M 1086 276 L 1080 291" stroke="#e6c888" stroke-width="5"/>
+  <path d="M 1090 281 L 1100 283 L 1106 278 Q 1114 278 1115 284 L 1112 293 L 1091 292 Z"
+        fill="#dba476" stroke="#6f6448" stroke-width="1.6"/>
+
+  <!-- The face, beard and pearl-strung imperial crown. -->
+  <path d="M 1009 244 L 1009 225 Q 995 211 1004 193 Q 1018 180 1038 192
+           L 1045 213 L 1056 224 L 1047 231 Q 1049 243 1036 248 L 1030 261 L 1015 256 Z"
+        fill="#ddb284" stroke="#705e43" stroke-width="2"/>
+  <path d="M 1008 232 Q 997 222 998 207 Q 997 190 1015 187 Q 1033 187 1040 201
+           L 1022 200 L 1017 214 L 1009 218 Z" fill="#213a32" stroke="none"/>
+  <path d="M 1031 212 L 1041 215" stroke="#24372e" stroke-width="2.5"/>
+  <path d="M 1034 219 L 1040 220" stroke="#26382e" stroke-width="2"/>
+  <path d="M 1028 237 Q 1038 230 1045 236 L 1053 238 L 1046 242 L 1035 241 L 1025 245"
+        fill="#253a30" stroke="none"/>
+  <path d="M 1019 239 Q 1031 249 1046 243 Q 1046 257 1031 272 L 1025 259 Q 1014 256 1012 246 Z"
+        fill="#23392e" stroke="none"/>
+  <path d="M 1029 251 L 1032 263 M 1037 249 L 1036 256" stroke="#5e6b4c" stroke-width="1.2"/>
+  <path d="M 1001 200 L 999 184 L 1039 177 L 1049 195 Z"
+        fill="#1e342f" stroke="#cfac68" stroke-width="2.5"/>
+  <path d="M 987 181 L 1036 168 L 1067 180 L 1015 196 Z"
+        fill="#263e35" stroke="#e0c182" stroke-width="2.5"/>
+  <path d="M 996 182 L 1037 172 L 1057 180 L 1016 191 Z" fill="#485442" stroke="none"/>
+  <path d="M 1000 190 L 1003 211 M 1009 194 L 1013 216" stroke="#bc995a" stroke-width="1.1"/>
+  <g fill="#e6d39a" stroke="#b18d51" stroke-width=".8">
+    <circle cx="1002" cy="202" r="2"/><circle cx="1003" cy="211" r="2"/>
+    <circle cx="1012" cy="207" r="2"/><circle cx="1013" cy="217" r="2"/>
+  </g>
+  <g stroke="#b6904f" stroke-width="1.2" fill="#f2dfac">
+    <path d="M 1040 188 V 210 M 1049 186 V 213 M 1058 183 V 209 M 1066 181 V 204" fill="none"/>
+    <circle cx="1040" cy="197" r="2.2"/><circle cx="1040" cy="206" r="2.2"/><circle cx="1040" cy="215" r="2.2"/>
+    <circle cx="1049" cy="196" r="2.2"/><circle cx="1049" cy="205" r="2.2"/><circle cx="1049" cy="214" r="2.2"/>
+    <circle cx="1058" cy="191" r="2.2"/><circle cx="1058" cy="200" r="2.2"/><circle cx="1058" cy="209" r="2.2"/>
+    <circle cx="1066" cy="187" r="2.2"/><circle cx="1066" cy="196" r="2.2"/><circle cx="1066" cy="205" r="2.2"/>
+  </g>
+
+  <!-- Portable metal work fixture fixed to the front of the saddle. -->
+  <path d="M 1107 342 L 1163 341 L 1172 352 L 1116 356 Z"
+        fill="#9eb7ad" stroke="#385753" stroke-width="2"/>
+  <path d="M 1116 356 L 1118 371 L 1127 372 L 1124 355 M 1157 353 L 1160 368 L 1169 367 L 1165 352"
+        fill="#637f77" stroke-width="1.8"/>
+  <path d="M 1124 343 L 1124 332 L 1150 329 L 1153 343"
+        fill="#b5c9b8" stroke="#3f625b" stroke-width="2"/>
+  <path d="M 1128 333 L 1146 331" stroke="#f2efce" stroke-width="2"/>
+  <circle cx="1122" cy="349" r="2" fill="#314f4c" stroke="none"/>
+  <circle cx="1159" cy="347" r="2" fill="#314f4c" stroke="none"/>
+
+  <!-- Copper cordless screwdriver: body, grip, chuck, bit, trigger and vents. -->
+  <g transform="translate(1084 283) rotate(39)">
+    <path d="M 0 -12 Q 2 -17 9 -17 H 35 Q 43 -14 43 -6 V 5 Q 40 11 33 11 H 5 Q -1 8 -1 1 Z"
+          fill="url(#bear-drill)" stroke="#354b42" stroke-width="2"/>
+    <path d="M 12 9 L 13 32 Q 14 36 20 36 H 27 L 25 11 Z"
+          fill="#35473d" stroke="#213a35" stroke-width="2"/>
+    <path d="M 10 31 H 30 V 40 H 9 Z" fill="#ab6240" stroke="#344a3c" stroke-width="2"/>
+    <path d="M 14 15 L 24 15 M 15 22 L 25 22 M 16 29 L 26 29" stroke="#778067" stroke-width="1.5"/>
+    <path d="M 5 -10 H 30" stroke="#f2bc7d" stroke-width="2"/>
+    <path d="M 10 -5 V 3 M 17 -5 V 3 M 24 -5 V 3" stroke="#6e3e30" stroke-width="2"/>
+    <path d="M 42 -7 H 52 L 55 -2 V 3 L 51 7 H 42 Z" fill="#607b70" stroke-width="1.8"/>
+    <path d="M 46 -5 V 5 M 51 -4 V 4" stroke="#b0bda0" stroke-width="1.2"/>
+    <path d="M 55 -1 H 72 L 77 2 L 72 4 H 55 Z" fill="#bac4aa" stroke-width="1.3"/>
+    <path d="M 60 0 H 72" stroke="#f5efd1" stroke-width="1"/>
+    <path d="M 26 11 Q 34 13 31 21 H 26" fill="#bd7e4b" stroke-width="1.5"/>
+  </g>
+  <!-- Near hand wraps the grip, rather than floating above the drill. -->
+  <path d="M 1028 276 Q 1049 283 1063 298 L 1080 302 L 1088 316
+           Q 1097 321 1091 328 L 1082 329 L 1071 316 Q 1045 313 1025 297 Z"
+        fill="url(#bear-robe)" stroke="#d2ae6a" stroke-width="2.5"/>
+  <path d="M 1070 301 L 1067 314" stroke="#edcc83" stroke-width="5"/>
+  <path d="M 1077 305 Q 1084 304 1089 309 L 1097 319 Q 1100 325 1093 329 L 1087 327 L 1082 320 L 1072 316 Z"
+        fill="#dca97a" stroke="#6f6448" stroke-width="1.6"/>
+  <path d="M 1083 310 L 1092 322 M 1080 314 L 1087 325" stroke="#a77955" stroke-width="1"/>
+
+  <!-- Visible screw: threaded shank and a cross-slot head under the bit. -->
+  <path d="M 1142 333 L 1142 345" stroke="#486d64" stroke-width="3"/>
+  <path d="M 1139 335 L 1145 337 M 1139 339 L 1145 341 M 1139 343 L 1145 345"
+        stroke="#d2dfc1" stroke-width="1.4"/>
+  <ellipse cx="1142" cy="332" rx="6.5" ry="3.4" fill="#dce4c7" stroke="#44675c" stroke-width="1.3"/>
+  <path d="M 1138 332 H 1146 M 1142 330 V 334" stroke="#486555" stroke-width="1.2"/>
+  <g fill="none" stroke="#e7bd67" stroke-width="1.8">
+    <path d="M 1156 323 Q 1162 331 1157 339 M 1129 329 Q 1125 323 1129 317"/>
+    <path d="M 1157 339 l -1 -5 m 1 5 l 4 -2 M 1129 317 l -3 2 m 3 -2 l 1 4"/>
+    <path d="M 1166 326 l 5 -3 M 1168 338 l 5 2 M 1132 310 l -2 -5"/>
+  </g>
+</g>
+
+ <g class="sans" fill="#5c777b" font-size="12" letter-spacing="2">
+  <text x="91" y="1135">高空奇想图鉴</text>
+  <text x="1510" y="1135" text-anchor="end">筋斗云号 · 孙悟空驾驶 · 一场不可能的骑行</text>
+ </g>
+ <path d="M 263 1130 H 1010" fill="none" stroke="#879f9e" stroke-width="1" opacity=".5"/>
+</g>
+<rect x="28" y="28" width="1544" height="1144" rx="32" fill="none" stroke="#7f9c9f" stroke-width="1.6"/>
+<rect x="39" y="39" width="1522" height="1122" rx="24" fill="none" stroke="#f8f5df" stroke-width="1" opacity=".7"/>
+</svg>
