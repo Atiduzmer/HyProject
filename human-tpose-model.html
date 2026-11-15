@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>人物 T-Pose · 3D 模型</title>
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; }
+  body {
+    background: radial-gradient(ellipse at 50% 40%, #4a4d52 0%, #26282c 60%, #121315 100%);
+    font-family: "Songti SC", "Noto Serif SC", "STSong", serif;
+    color: #e8e6e1;
+  }
+  canvas { display: block; }
+  .caption { position: fixed; left: 32px; bottom: 28px; pointer-events: none; }
+  .caption h1 { margin: 0; font-size: 28px; font-weight: 600; letter-spacing: .4em; }
+  .caption p { margin: 8px 0 0; font-size: 12px; letter-spacing: .2em; opacity: .5; }
+  #wire {
+    position: fixed; right: 32px; bottom: 28px; padding: 8px 18px;
+    font: inherit; font-size: 13px; letter-spacing: .3em; color: inherit; cursor: pointer;
+    background: transparent; border: 1px solid rgba(232, 230, 225, .35); border-radius: 2px;
+  }
+  #wire:hover, #wire.on { background: rgba(232, 230, 225, .12); }
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+<div class="caption">
+  <h1>人物 T-Pose</h1>
+  <p>拖拽旋转 · 滚轮缩放</p>
+</div>
+<button id="wire">线框</button>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+const V = (x, y, z) => new THREE.Vector3(x, y, z);
+const X = V(1, 0, 0), Y = V(0, 1, 0), Z = V(0, 0, 1);
+
+// ---------- 基础 ----------
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.setSize(innerWidth, innerHeight);
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+document.body.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(30, innerWidth / innerHeight, 0.05, 60);
+camera.position.set(1.7, 1.45, 5.3);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.target.set(0, 0.95, 0);
+controls.enableDamping = true;
+controls.enablePan = false;
+controls.minDistance = 0.6;
+controls.maxDistance = 10;
+controls.maxPolarAngle = Math.PI * 0.54;
+controls.autoRotate = true;
+controls.autoRotateSpeed = 0.7;
+
+// ---------- 灯光：影棚三点布光 ----------
+scene.add(new THREE.HemisphereLight(0xf2f4f8, 0x3a3b3f, 0.75));
+const key = new THREE.DirectionalLight(0xfff0dc, 2.3);
+key.position.set(2.5, 4.5, 4);
+key.castShadow = true;
+key.shadow.mapSize.set(2048, 2048);
+Object.assign(key.shadow.camera, { left: -1.6, right: 1.6, bottom: -0.6, top: 2.4 });
+key.shadow.bias = -0.0003;
+key.shadow.normalBias = 0.012;
+scene.add(key);
+const rim = new THREE.DirectionalLight(0xa9c8ee, 1.3);
+rim.position.set(-3, 2.5, -3.5);
+scene.add(rim);
+
+// ---------- 材质：单色雕塑泥 ----------
+const clay = new THREE.MeshStandardMaterial({ color: 0xbdb5aa, roughness: 0.72, side: THREE.DoubleSide });
+const floor = new THREE.MeshStandardMaterial({ color: 0x2c2e32, roughness: 0.95 });
+
+const add = (geo, parent, material = clay) => {
+  const m = new THREE.Mesh(geo, material);
+  m.castShadow = m.receiveShadow = true;
+  parent.add(m);
+  return m;
+};
+// 两点间的胶囊
+const strut = (parent, a, b, r) => {
+  const d = b.clone().sub(a);
+  const m = add(new THREE.CapsuleGeometry(r, d.length(), 6, 14), parent);
+  m.position.copy(a).addScaledVector(d, 0.5);
+  m.quaternion.setFromUnitVectors(Y, d.normalize());
+  return m;
+};
+
+// ---------- 放样 + 雕刻 ----------
+// 放样：每个截面 [中心 x,y,z, U 向半径, W 正向半径, W 负向半径]，截面间用样条平滑过渡。
+// 雕刻：sculpt 是一组高斯笔刷，沿表面法向把顶点推出（h>0 隆起）或压入（h<0 凹陷），
+//       肌肉、骨点、五官都长在曲面上，而不是另贴一块。
+const dab = (x, y, z, sx, sy, sz, h) => ({ a: V(x, y, z), s: V(sx, sy, sz), h });         // 椭球笔刷
+const stroke = (a, b, r, h) => ({ a: V(...a), b: V(...b), r, h });                        // 线形笔刷
+const both = list => list.flatMap(d => {                                                  // 左右对称
+  const m = { ...d, a: d.a.clone().setX(-d.a.x) };
+  if (d.b) m.b = d.b.clone().setX(-d.b.x);
+  return d.a.x === 0 && (!d.b || d.b.x === 0) ? [d] : [d, m];
+});
+const seg3 = new THREE.Line3(), near = V();
+function relief(p, sculpt) {
+  let sum = 0;
+  for (const d of sculpt) {
+    let q;
+    if (d.b) {
+      seg3.set(d.a, d.b).closestPointToPoint(p, true, near);
+      q = near.distanceToSquared(p) / (d.r * d.r);
+    } else {
+      const dx = (p.x - d.a.x) / d.s.x, dy = (p.y - d.a.y) / d.s.y, dz = (p.z - d.a.z) / d.s.z;
+      q = dx * dx + dy * dy + dz * dz;
+    }
+    if (q < 9) sum += d.h * Math.exp(-q);
+  }
+  return sum;
+}
+
+function loft(parent, stations, U, W, { rings: ringsPer = 12, seg = 64, sculpt = [] } = {}) {
+  const centers = new THREE.CatmullRomCurve3(stations.map(s => V(s[0], s[1], s[2])));
+  const radii = new THREE.CatmullRomCurve3(stations.map(s => V(s[3], s[4], s[5])));
+  const rings = (stations.length - 1) * ringsPer;
+  const pos = [], idx = [];
+  for (let i = 0; i <= rings; i++) {
+    const t = i / rings, c = centers.getPoint(t), r = radii.getPoint(t);
+    for (let j = 0; j < seg; j++) {
+      const a = j / seg * Math.PI * 2, cs = Math.cos(a), sn = Math.sin(a);
+      const p = c.clone()
+        .addScaledVector(U, cs * Math.max(r.x, 0.0015))
+        .addScaledVector(W, sn * Math.max(sn >= 0 ? r.y : r.z, 0.0015));
+      if (sculpt.length) p.addScaledVector(p.clone().sub(c).normalize(), relief(p, sculpt));
+      pos.push(p.x, p.y, p.z);
+    }
+  }
+  for (let i = 0; i < rings; i++) for (let j = 0; j < seg; j++) {
+    const a = i * seg + j, b = i * seg + (j + 1) % seg, c = a + seg, d = b + seg;
+    idx.push(a, b, d, a, d, c);
+  }
+  const g = new THREE.BufferGeometry();
+  g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  g.setIndex(idx);
+  g.computeVertexNormals();
+  return add(g, parent);
+}
+
+// ---------- 地台 ----------
+add(new THREE.CylinderGeometry(1.15, 1.18, 0.04, 96), scene, floor).position.y = -0.02;
+const grid = new THREE.PolarGridHelper(1.15, 12, 5, 96, 0x6a6d73, 0x45484d);
+grid.position.y = 0.001;
+scene.add(grid);
+
+const figure = new THREE.Group();
+scene.add(figure);
+
+// ---------- 躯干（骨盆 → 腰 → 胸廓 → 颈） ----------
+loft(figure, [
+  //  x     y      z      宽     前     后
+  [0, 0.795, 0.000, 0.040, 0.040, 0.050],
+  [0, 0.850, 0.000, 0.150, 0.088, 0.108],
+  [0, 0.930, 0.000, 0.180, 0.098, 0.120],
+  [0, 1.010, 0.004, 0.168, 0.102, 0.108],
+  [0, 1.100, 0.008, 0.146, 0.098, 0.088],
+  [0, 1.210, 0.006, 0.160, 0.106, 0.098],
+  [0, 1.320, 0.000, 0.180, 0.118, 0.112],
+  [0, 1.420, -0.004, 0.186, 0.106, 0.116],
+  [0, 1.480, -0.008, 0.150, 0.082, 0.098],
+  [0, 1.520, -0.006, 0.076, 0.058, 0.066],
+  [0, 1.570, 0.000, 0.055, 0.054, 0.058],
+  [0, 1.640, 0.004, 0.054, 0.052, 0.056],
+], X, Z, { rings: 20, seg: 128, sculpt: both([
+  dab(0.088, 1.352, 0.105, 0.062, 0.042, 0.06, 0.013),                 // 胸大肌
+  dab(0, 1.345, 0.12, 0.011, 0.06, 0.04, -0.007),                      // 胸骨沟
+  dab(0.09, 1.292, 0.11, 0.055, 0.012, 0.05, -0.0028),                   // 胸肌下缘
+  stroke([0.02, 1.47, 0.072], [0.165, 1.49, 0.03], 0.0105, 0.007),     // 锁骨
+  dab(0, 1.488, 0.07, 0.014, 0.012, 0.03, -0.006),                     // 颈窝
+  stroke([0.05, 1.63, -0.01], [0.014, 1.5, 0.058], 0.011, 0.005),      // 胸锁乳突肌
+  dab(0, 1.565, 0.055, 0.012, 0.012, 0.02, 0.004),                     // 喉结
+  stroke([0, 1.29, 0.11], [0, 1.1, 0.105], 0.009, -0.0045),            // 腹白线
+  dab(0.036, 1.255, 0.1, 0.024, 0.022, 0.04, 0.0045),                  // 腹直肌 ×3
+  dab(0.036, 1.195, 0.1, 0.024, 0.022, 0.04, 0.0045),
+  dab(0.036, 1.135, 0.1, 0.024, 0.022, 0.04, 0.004),
+  dab(0, 1.085, 0.106, 0.0065, 0.0065, 0.02, -0.007),                  // 脐
+  stroke([0.125, 1.0, 0.07], [0.04, 0.88, 0.09], 0.012, -0.004),       // 腹股沟
+  dab(0.118, 0.985, 0.07, 0.026, 0.026, 0.03, 0.003),                    // 髂前上棘
+  stroke([0, 1.46, -0.115], [0, 1.0, -0.1], 0.014, -0.008),            // 脊柱沟
+  dab(0.095, 1.375, -0.11, 0.045, 0.058, 0.05, 0.009),                 // 肩胛
+  dab(0.06, 1.14, -0.09, 0.03, 0.09, 0.04, 0.006),                     // 竖脊肌
+  dab(0.092, 0.905, -0.115, 0.062, 0.062, 0.07, 0.022),                // 臀大肌
+  stroke([0, 0.96, -0.13], [0, 0.82, -0.09], 0.013, -0.016),           // 臀沟
+  dab(0.075, 1.5, -0.05, 0.06, 0.025, 0.04, 0.008),                    // 斜方肌
+]) });
+
+// ---------- 头 ----------
+loft(figure, [
+  [0, 1.552, 0.046, 0.004, 0.004, 0.004],
+  [0, 1.566, 0.040, 0.036, 0.032, 0.034],
+  [0, 1.600, 0.022, 0.057, 0.054, 0.058],
+  [0, 1.640, 0.008, 0.069, 0.078, 0.082],
+  [0, 1.690, 0.000, 0.076, 0.090, 0.098],
+  [0, 1.740, -0.002, 0.077, 0.093, 0.100],
+  [0, 1.775, -0.004, 0.064, 0.078, 0.086],
+  [0, 1.795, -0.005, 0.045, 0.054, 0.060],
+  [0, 1.806, -0.006, 0.024, 0.028, 0.032],
+  [0, 1.811, -0.006, 0.003, 0.003, 0.003],
+], X, Z, { rings: 26, seg: 176, sculpt: both([
+  dab(0.033, 1.690, 0.085, 0.017, 0.011, 0.025, -0.0095),              // 眼窝
+  dab(0.032, 1.713, 0.09, 0.026, 0.007, 0.025, 0.0055),                // 眉弓
+  dab(0, 1.705, 0.095, 0.01, 0.01, 0.02, -0.002),                      // 眉间
+  dab(0, 1.676, 0.092, 0.0085, 0.022, 0.02, 0.011),                    // 鼻梁
+  dab(0, 1.652, 0.096, 0.0105, 0.0105, 0.02, 0.02),                    // 鼻尖
+  dab(0.0135, 1.648, 0.09, 0.0065, 0.0065, 0.015, 0.007),              // 鼻翼
+  dab(0.022, 1.646, 0.085, 0.006, 0.014, 0.015, -0.003),               // 鼻唇沟
+  dab(0.05, 1.658, 0.065, 0.02, 0.014, 0.03, 0.0055),                  // 颧骨
+  dab(0.055, 1.625, 0.05, 0.016, 0.02, 0.03, -0.003),                  // 颊凹
+  dab(0, 1.637, 0.088, 0.005, 0.006, 0.02, -0.0025),                   // 人中
+  dab(0, 1.6262, 0.085, 0.019, 0.0046, 0.02, 0.0075),                  // 上唇
+  dab(0, 1.6185, 0.085, 0.023, 0.0016, 0.02, -0.0045),                 // 口裂
+  dab(0, 1.6105, 0.083, 0.016, 0.0052, 0.02, 0.0085),                   // 下唇
+  dab(0, 1.600, 0.078, 0.016, 0.004, 0.02, -0.003),                    // 颏唇沟
+  dab(0, 1.582, 0.07, 0.02, 0.013, 0.025, 0.006),                      // 颏
+  dab(0.06, 1.6, 0.02, 0.012, 0.014, 0.03, 0.004),                     // 下颌角
+  dab(0.07, 1.72, 0.05, 0.012, 0.025, 0.03, -0.003),                   // 颞窝
+]) });
+
+for (const s of [-1, 1]) {
+  const eye = add(new THREE.SphereGeometry(0.0125, 28, 20), figure);            // 眼球
+  eye.position.set(s * 0.033, 1.690, 0.0625);
+  const lid = add(new THREE.SphereGeometry(0.0139, 28, 12, 0, Math.PI * 2, 0, Math.PI * 0.3), figure);
+  lid.position.copy(eye.position); lid.rotation.x = 0.45;                       // 上睑
+  const low = add(new THREE.SphereGeometry(0.0136, 28, 10, 0, Math.PI * 2, 0, Math.PI * 0.2), figure);
+  low.position.copy(eye.position); low.rotation.x = 2.45;                        // 下睑
+  for (const m of [eye, lid, low]) m.scale.x = 1.45;                            // 杏仁形眼裂
+  // 耳：耳廓 + 耳轮 + 耳垂
+  const ear = new THREE.Group();
+  ear.position.set(s * 0.077, 1.682, -0.008); ear.rotation.y = s * -0.35;
+  figure.add(ear);
+  const concha = add(new THREE.SphereGeometry(1, 20, 16), ear);
+  concha.scale.set(0.006, 0.028, 0.017);
+  const helix = add(new THREE.TorusGeometry(0.019, 0.0042, 10, 28, Math.PI * 1.3), ear);
+  helix.rotation.set(0, Math.PI / 2, 0); helix.rotateZ(-0.2); helix.scale.set(1, 1.3, 1);
+  helix.position.set(s * 0.004, 0.003, 0);
+  const lobe = add(new THREE.SphereGeometry(1, 14, 10), ear);
+  lobe.position.set(s * 0.002, -0.024, 0.004); lobe.scale.set(0.0055, 0.008, 0.007);
+}
+
+// ---------- 手臂与手（建右侧，镜像出左侧） ----------
+function finger(parent, origin, splay, lengths, r, curl) {
+  let node = new THREE.Group();
+  node.position.copy(origin); node.rotation.y = splay;
+  parent.add(node);
+  lengths.forEach((len, i) => {
+    node.rotation.z = -curl * (i ? 1.15 : 0.6);
+    const rr = r * (1 - i * 0.08);
+    const g = new THREE.CapsuleGeometry(rr, len, 6, 16);
+    g.rotateZ(-Math.PI / 2); g.translate(len / 2, 0, 0);
+    add(g, node);
+    if (i === lengths.length - 1) {                                             // 指甲
+      const nail = add(new THREE.SphereGeometry(1, 14, 10), node);
+      nail.position.set(len * 0.72, rr * 0.72, 0); nail.scale.set(len * 0.4, rr * 0.3, rr * 0.78);
+    } else {
+      const next = new THREE.Group();
+      next.position.x = len;
+      node.add(next);
+      node = next;
+    }
+  });
+}
+
+function arm(side) {
+  const g = new THREE.Group();
+  g.scale.x = side;
+  figure.add(g);
+  //            z 位     张开    长度比   粗细
+  const digits = [[0.029, -0.075, 0.92, 0.0086], [0.0095, -0.01, 1.0, 0.009], [-0.0095, 0.055, 0.93, 0.0085], [-0.0275, 0.13, 0.76, 0.0075]];
+  loft(g, [
+    //  x      y      z      高     前     后
+    [0.130, 1.430, 0.000, 0.045, 0.045, 0.048],
+    [0.200, 1.440, 0.000, 0.070, 0.068, 0.070],   // 三角肌
+    [0.262, 1.438, 0.000, 0.061, 0.060, 0.060],
+    [0.330, 1.436, 0.002, 0.051, 0.054, 0.050],   // 肱二头肌
+    [0.410, 1.436, 0.002, 0.044, 0.046, 0.045],
+    [0.485, 1.437, 0.000, 0.038, 0.040, 0.041],   // 肘
+    [0.540, 1.438, 0.002, 0.043, 0.044, 0.040],   // 前臂肌群
+    [0.620, 1.439, 0.002, 0.036, 0.037, 0.034],
+    [0.700, 1.440, 0.001, 0.026, 0.030, 0.029],
+    [0.748, 1.440, 0.000, 0.0185, 0.027, 0.027],  // 腕
+    [0.776, 1.439, 0.001, 0.0160, 0.035, 0.034],
+    [0.806, 1.438, 0.001, 0.0140, 0.042, 0.039],  // 掌
+    [0.846, 1.438, 0.001, 0.0120, 0.043, 0.039],
+    [0.862, 1.438, 0.001, 0.0050, 0.036, 0.033],
+  ], Y, Z, { rings: 12, seg: 72, sculpt: [
+    dab(0.488, 1.436, -0.042, 0.02, 0.02, 0.02, 0.007),                // 鹰嘴
+    dab(0.47, 1.436, 0.04, 0.02, 0.03, 0.02, -0.003),                  // 肘窝
+    dab(0.3, 1.47, 0.0, 0.05, 0.03, 0.04, 0.005),                      // 三角肌止点下的肱三头肌/二头肌分界
+    dab(0.745, 1.457, -0.021, 0.01, 0.008, 0.01, 0.0045),              // 尺骨茎突
+    dab(0.792, 1.426, 0.03, 0.022, 0.012, 0.018, 0.009),               // 大鱼际
+    dab(0.80, 1.427, -0.026, 0.022, 0.01, 0.014, 0.005),               // 小鱼际
+    dab(0.815, 1.424, 0.002, 0.016, 0.01, 0.014, -0.003),              // 掌心
+    ...digits.map(([z]) => dab(0.848, 1.451, z, 0.0085, 0.006, 0.0075, 0.0035)),            // 掌指关节
+    ...digits.map(([z]) => stroke([0.79, 1.452, z * 0.55], [0.84, 1.451, z], 0.004, 0.0016)), // 伸肌腱
+  ] });
+
+  for (const [z, splay, k, r] of digits) {
+    finger(g, V(0.853, 1.438, z), splay, [0.042 * k, 0.027 * k, 0.021 * k], r, 0.16);
+  }
+  const thumb = new THREE.Group();                                              // 拇指朝前下方展开
+  thumb.position.set(0.778, 1.432, 0.03);
+  thumb.quaternion.setFromUnitVectors(X, V(0.62, -0.2, 0.76).normalize());
+  g.add(thumb);
+  finger(thumb, V(0, 0, 0), 0, [0.036, 0.03, 0.024], 0.0112, 0.12);
+}
+arm(1); arm(-1);
+
+// ---------- 腿与足 ----------
+function leg(side) {
+  const g = new THREE.Group();
+  g.scale.x = side;
+  figure.add(g);
+  loft(g, [
+    //  x      y      z      宽     前     后
+    [0.100, 0.960, -0.004, 0.070, 0.070, 0.085],
+    [0.100, 0.850, 0.000, 0.088, 0.092, 0.092],
+    [0.100, 0.710, 0.004, 0.078, 0.087, 0.078],   // 股四头肌
+    [0.098, 0.570, 0.004, 0.061, 0.066, 0.060],
+    [0.097, 0.500, 0.004, 0.055, 0.058, 0.053],   // 膝
+    [0.097, 0.440, 0.000, 0.052, 0.050, 0.060],
+    [0.097, 0.360, -0.004, 0.055, 0.044, 0.072],  // 腓肠肌
+    [0.096, 0.230, -0.004, 0.041, 0.039, 0.051],
+    [0.095, 0.110, -0.004, 0.031, 0.034, 0.039],  // 踝
+    [0.095, 0.060, 0.000, 0.030, 0.038, 0.037],
+    [0.095, 0.022, 0.002, 0.028, 0.040, 0.032],
+  ], X, Z, { rings: 14, seg: 72, sculpt: [
+    dab(0.097, 0.503, 0.062, 0.024, 0.028, 0.03, 0.008),               // 髌骨
+    dab(0.097, 0.455, 0.055, 0.012, 0.016, 0.02, 0.004),               // 胫骨粗隆
+    dab(0.125, 0.6, 0.05, 0.03, 0.05, 0.04, 0.005),                    // 股外侧肌
+    dab(0.07, 0.57, 0.045, 0.022, 0.03, 0.03, 0.006),                  // 股内侧肌
+    dab(0.097, 0.5, -0.055, 0.02, 0.03, 0.02, -0.005),                 // 腘窝
+    stroke([0.088, 0.44, 0.048], [0.09, 0.14, 0.03], 0.008, 0.003),    // 胫骨前缘
+    stroke([0.095, 0.22, -0.052], [0.095, 0.07, -0.045], 0.011, 0.005),// 跟腱
+    dab(0.062, 0.092, -0.004, 0.014, 0.016, 0.016, 0.009),             // 内踝
+    dab(0.128, 0.08, -0.012, 0.014, 0.016, 0.016, 0.009),              // 外踝
+    dab(0.097, 0.045, 0.045, 0.03, 0.03, 0.03, 0.014),                 // 足背过渡
+  ] });
+
+  loft(g, [                                                                     // 足：沿前后方向放样
+    //  x      y      z      宽     上     下
+    [0.095, 0.030, -0.072, 0.008, 0.012, 0.012],
+    [0.095, 0.030, -0.052, 0.029, 0.022, 0.028],
+    [0.096, 0.036, 0.000, 0.036, 0.030, 0.034],
+    [0.098, 0.031, 0.060, 0.042, 0.036, 0.029],
+    [0.100, 0.022, 0.120, 0.048, 0.024, 0.020],
+    [0.101, 0.016, 0.162, 0.046, 0.015, 0.014],
+    [0.101, 0.013, 0.176, 0.032, 0.008, 0.008],
+  ], X, Y, { rings: 12, seg: 56, sculpt: [
+    dab(0.075, 0.0, 0.05, 0.02, 0.012, 0.04, -0.006),                  // 足弓
+    dab(0.07, 0.03, 0.135, 0.016, 0.012, 0.02, 0.004),                 // 第一跖骨头
+  ] });
+  //          x 位     z 起点   长度    粗细
+  const toes = [[0.066, 0.170, 0.030, 0.0135], [0.089, 0.174, 0.027, 0.0098], [0.106, 0.169, 0.023, 0.0092], [0.121, 0.161, 0.019, 0.0086], [0.134, 0.150, 0.015, 0.0080]];
+  for (const [x, z, len, r] of toes) {
+    strut(g, V(x, r + 0.001, z), V(x + 0.002, r + 0.001, z + len), r);
+    const nail = add(new THREE.SphereGeometry(1, 12, 8), g);                    // 趾甲
+    nail.position.set(x + 0.002, r * 1.75, z + len * 0.85); nail.scale.set(r * 0.72, r * 0.28, len * 0.34);
+  }
+}
+leg(1); leg(-1);
+
+// ---------- 线框开关 ----------
+const wire = document.getElementById('wire');
+wire.addEventListener('click', () => {
+  clay.wireframe = !clay.wireframe;
+  wire.classList.toggle('on', clay.wireframe);
+});
+
+renderer.setAnimationLoop(() => {
+  controls.update();
+  renderer.render(scene, camera);
+});
+
+addEventListener('resize', () => {
+  camera.aspect = innerWidth / innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+});
+</script>
+</body>
+</html>
